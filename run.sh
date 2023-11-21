@@ -1,0 +1,2 @@
+
+docker run --gpus='"device=0"' --shm-size=20g -v /mnt/sda2:/mnt/sda2 -v /mnt/sda1:/mnt/sda1 -t yolov5:1.0 --data /mnt/sda1/workspace/open_source/yolov5-master/data/xt.yaml --epochs 300 --weights '' --cfg /mnt/sda1/workspace/open_source/yolov5-master/models/yolov5n.yaml  --project /mnt/sda1/train.output/face.detect/yolov5/test  --weights /mnt/sda1/workspace/open_source/yolov5-master/checkpoint/yolov5s.pt  --batch-size 128 --device cpu

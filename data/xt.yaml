@@ -1,0 +1,20 @@
+# PASCAL VOC dataset http://host.robots.ox.ac.uk/pascal/VOC/
+# Train command: python train.py --data voc.yaml
+# Default dataset location is next to /yolov5:
+#   /parent_folder
+#     /VOC
+#     /yolov5
+
+
+# download command/URL (optional)
+#download: bash data/scripts/get_voc.sh
+
+path: face-yolo  # dataset root dir
+train: train/images  # train images (relative to 'path') 118287 images
+val: val/images  # val images (relative to 'path') 5000 images
+test: val/images  # 20288 of 40670 images, submit to https://competitions.codalab.org/competitions/20794
+
+
+# class names
+names:
+  0: face
