@@ -30,15 +30,15 @@ class Albumentations:
 
             T = [
                 A.Rotate(limit=(-100, 100), p=0.2),
-                A.RandomResizedCrop(height=size, width=size, scale=(0.8, 1.0), ratio=(0.9, 1.11), p=0.3),
-                A.Flip(p=0.3),
+                A.RandomResizedCrop(height=size, width=size, scale=(0.7, 0.9), ratio=(0.9, 1.11), p=0.3),
+                A.Flip(p=0.5),
                 A.Blur(p=0.1),
                 A.MedianBlur(p=0.2),
                 A.ToGray(p=0.1),
                 A.CLAHE(p=0.1),
                 A.RandomBrightnessContrast(p=0.5),
                 A.RandomGamma(p=0.2),
-                A.ImageCompression(quality_lower=70, p=0.1)]  # transforms
+                A.ImageCompression(quality_lower=65, p=0.1)]  # transforms
             self.transform = A.Compose(T, bbox_params=A.BboxParams(format='yolo', label_fields=['class_labels']))
 
             LOGGER.info(prefix + ', '.join(f'{x}'.replace('always_apply=False, ', '') for x in T if x.p))
